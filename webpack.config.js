@@ -1,5 +1,5 @@
 const path = require('path')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -14,7 +14,8 @@ const jsLoaders = () => {
     {
       loader: 'babel-loader',
       options: {
-        presets: ['@babel/preset-env']
+        presets: ['@babel/preset-env'],
+        plugins: ['@babel/plugin-proposal-class-properties']
       }
     }
   ]
@@ -36,10 +37,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
-    extensions: [".wasm", ".ts", ".tsx", ".mjs", ".cjs", ".js", ".json"],
+    extensions: ['.js', '.wasm', '.ts', '.tsx', '.mjs', '.cjs', '.json'],
     alias: {
       '@': path.resolve(__dirname, 'src'),
-      '@core': path.resolve(__dirname, 'src/core'),
+      '@core': path.resolve(__dirname, 'src/core')
     }
   },
   devtool: isDev ? 'source-map': false,
