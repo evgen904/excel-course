@@ -25,3 +25,14 @@ body {
   max-width: 100%;
   font-size: .8rem;
 }
+
+.box {
+  width: 280px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c00;
+  color: #ffffff;
+}
